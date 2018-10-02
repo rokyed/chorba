@@ -2,6 +2,7 @@
 <div class="main">
 	<img class="logo" src="../assets/logo.png" v-on:click="goHome()">
 	<el-button v-for="item in menuItems" :key="item.id" class="full-width" v-on:click="clicked(item)">{{ item.title }}</el-button>
+	<el-button class="full-width" v-on:click="goEdit()">Editor</el-button>
 </div>
 </template>
 <script>
@@ -20,6 +21,10 @@ export default {
 	methods: {
 		goHome() {
 			this.$router.push('/')
+		},
+
+		goEdit() {
+			this.$router.push('/editing')
 		},
 
 		clicked(item) {
