@@ -45,9 +45,6 @@ export default {
 				this.$router.push('/')
 			})
 		}
-	},
-	created () {
-		this.load()
 	}
 }
 </script>
