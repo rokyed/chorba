@@ -1,54 +1,40 @@
 <template>
 <div class="main">
-	<img class="logo" src="../assets/logo.png">
-	<el-button v-for="item in menuItems" :key="item.id" class="full-width" @click="clicked(item)">{{ item.title }}</el-button>
+	<img class="logo" src="../assets/logo.png" v-on:click="goHome()">
+	<el-button v-for="item in menuItems" :key="item.id" class="full-width" v-on:click="clicked(item)">{{ item.title }}</el-button>
 </div>
 </template>
 <script>
+import axios from 'axios'
+
 export default {
 	name: 'AsideElement',
-	params: {
-		menuItems: {
-			type: Array,
-			required: true
-		}
-	},
 	data() {
 		return {
-			menuItems: [{
-				id: 13404,
-				title: 'bla'
-			},{
-				id: 1340423,
-				title: 'bro'
-			},{
-				id: 1340423,
-				title: 'bro'
-			},{
-				id: 1340423,
-				title: 'bro'
-			},{
-				id: 1340423,
-				title: 'bro'
-			},{
-				id: 1340423,
-				title: 'bro'
-			},{
-				id: 1340423,
-				title: 'bro'
-			},{
-				id: 1340423,
-				title: 'bro'
-			},{
-				id: 1340423,
-				title: 'bro'
-			}]
+			menuItems: []
 		}
 	},
+	watch: {
+		'$route': 'load'
+	},
 	methods: {
-		clicked(id) {
-			alert(JSON.stringify(id))
+		goHome() {
+			this.$router.push('/')
+		},
+
+		clicked(item) {
+			this.$router.push('/art/' + item.id)
+		},
+
+		load() {
+			axios.get('/api/list')
+			.then((response) => {
+				this.menuItems = response.data
+			})
 		}
+	},
+	created () {
+		this.load()
 	}
 }
 </script>
@@ -60,11 +46,13 @@ export default {
 .logo {
 	width: 160px;
 	margin: 20px;
+	cursor: pointer;
 }
 .full-width {
-	width: 100%;
+	width: 160px;
+	margin: 20px;
 }
 .el-button+.el-button {
-	margin-left: 0;
+	margin-left: 20px;
 }
 </style>

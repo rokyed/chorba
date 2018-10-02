@@ -8,12 +8,15 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
 
+Vue.config.performance = true
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({el: '#app',
-	router,
+new Vue({
+	el: '#app',
 	components: {
 		App
 	},
-	template: '<App/>'})
+	template: '<App/>',
+	router
+})
