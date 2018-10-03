@@ -1,22 +1,13 @@
 <template>
-<div class="main">
-	<span>title</span>
-	<el-input
-  type="textarea"
-  :autosize="{ minRows: 1, maxRows: 2}"
-  placeholder="Please input"
-  v-model="title">
-</el-input>
-<span>content</span>
-
-	<el-input
-  type="textarea"
-  :autosize="{ minRows: 2, maxRows: 20}"
-  placeholder="Please input"
-  v-model="content">
-</el-input>
-<el-button class="full-width" v-on:click="save()">Sumbit :)</el-button>
-</div>
+<form @submit="validate" class="main">
+	<span class="error" v-if="titleError">Title is missing</span>
+	<text-field class="text" maxlength="32" v-model="title" title="Title of the article" />
+	<span class="error" v-if="tagsError">Tags are missing</span>
+	<text-field title="Tags of the article" class="text" v-model="tags" maxlength="100" placeholder="separated by space e.g.'tag1 tag2'" />
+	<text-field title="Content" class="text"
+	type="textarea" v-model="content"/>
+	<button class="submit gradient-background-purp">POST</button>
+</form>
 </template>
 <script>
 import axios from 'axios'
@@ -26,13 +17,20 @@ export default {
 	data() {
 		return {
 			title: '',
-			content: ''
+			content: '',
+			tags: '',
+			titleError: false,
+			tagsError: false,
 		}
 	},
 	watch: {
 		'$route': 'load'
 	},
 	methods: {
+		validate() {
+
+		},
+
 		save() {
 			let serialized = {
 				title: this.title,
@@ -50,5 +48,22 @@ export default {
 </script>
 
 <style scoped>
-
+	.main {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.main > * {
+		margin: 10px;
+	}
+	.text {
+		font-size:30px;
+		display: block;
+	}
+	.submit {
+		font-size: 30px;
+		border: none;
+		color: #fff;
+		font-family: 'Pacifico', cursive;
+	}
 </style>

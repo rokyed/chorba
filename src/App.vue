@@ -4,23 +4,22 @@
 		<aside-element />
 	</el-aside>
 	<el-container>
-		<el-header>Header</el-header>
+		<el-header>
+			<header-element />
+		</el-header>
 		<el-main>
 			<router-view />
 		</el-main>
-		<el-footer>Footer</el-footer>
+		<el-footer>
+			<footer-element />
+		</el-footer>
 	</el-container>
 </el-container>
 </template>
 
 <script>
-import AsideElement from '@/components/AsideElement'
-
 export default {
-	name: 'App',
-	components: {
-		AsideElement
-	}
+	name: 'App'
 }
 </script>
 
@@ -30,34 +29,28 @@ export default {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
-	color: #2c3e50;
 	margin-top: 60px;
 }
 
 .el-header,
 .el-footer {
-	background-color: #B3C0D1;
-	color: #333;
 	text-align: center;
 	line-height: 60px;
 }
 
 .el-aside {
-	background-color: #D3DCE6;
-	color: #333;
 	text-align: center;
 	line-height: 200px;
 }
 
 .el-main {
-	background-color: #E9EEF3;
-	color: #333;
 	text-align: center;
 	line-height: 160px;
 }
 
 body>.el-container {
 	margin-bottom: 40px;
+	height: 100%;
 }
 
 .el-container:nth-child(5) .el-aside,
@@ -68,4 +61,6 @@ body>.el-container {
 .el-container:nth-child(7) .el-aside {
 	line-height: 320px;
 }
+
+
 </style>

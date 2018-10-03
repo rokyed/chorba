@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './assets/global.css'
 import ajax from './plugin/Request.js'
+import './dependencies.js'
 
 Vue.use(ElementUI)
 Vue.use(ajax)

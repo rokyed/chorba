@@ -4,16 +4,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const arts = [
-	{
-		title: 'bla',
-		content: 'bla bla bla!'
-	},
-	{
-		title: 'bla2',
-		content: 'bla bla bla2!'
-	}
-]
+const arts = []
 
 cache.put('arts', JSON.stringify(arts))
 
@@ -45,7 +36,11 @@ app.get('/list', (req, res) => {
 	for (let i = 0; i < arts.length; i++) {
 		output.push({
 			id: i,
-			title: arts[i].title
+			title: arts[i].title,
+			tags: arts[i].tags,
+			author: arts[i],
+			author
+
 		})
 	}
 	res.json(output)
