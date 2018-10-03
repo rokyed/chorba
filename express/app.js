@@ -38,9 +38,7 @@ app.get('/list', (req, res) => {
 			id: i,
 			title: arts[i].title,
 			tags: arts[i].tags,
-			author: arts[i],
-			author
-
+			author: arts[i].author
 		})
 	}
 	res.json(output)
