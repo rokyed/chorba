@@ -33,7 +33,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 todo:
 -validation
 -pluggable components
--centralized request failure (logic should be centralized and not per component) ( plugin)
+<!-- -centralized request failure (logic should be centralized and not per component) ( plugin) -->
 
 
 post
