@@ -39,7 +39,7 @@ export default {
 				content: this.content
 			}
 
-			axios.get('/api/save?data=' + encodeURIComponent(JSON.stringify(serialized)))
+			this.$ajax('/api/save?data=' + encodeURIComponent(JSON.stringify(serialized)))
 			.then(() => {
 				this.$message('Lots of cookies !!!!');
 				this.$router.push('/')

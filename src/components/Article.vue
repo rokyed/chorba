@@ -29,7 +29,7 @@ export default {
 		load() {
 			let id = this.$route.params.id
 
-			axios.get('/api/load?id=' + id)
+			this.$ajax('/api/load?id=' + id)
 			.then((response) => {
 				this.title = response.data.title
 				this.content = response.data.content

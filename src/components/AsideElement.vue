@@ -32,7 +32,7 @@ export default {
 		},
 
 		load() {
-			axios.get('/api/list')
+			this.$ajax('/api/list')
 			.then((response) => {
 				this.menuItems = response.data
 			})

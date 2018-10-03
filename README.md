@@ -28,3 +28,17 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+todo:
+-validation
+-pluggable components
+-centralized request failure (logic should be centralized and not per component) ( plugin)
+
+
+post
+-author
+-preview-image
+-tags
+-title
+-content
