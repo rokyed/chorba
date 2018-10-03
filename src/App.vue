@@ -1,35 +1,41 @@
 <template>
-<el-container>
-	<el-aside width="200px">
-		<aside-element />
-	</el-aside>
+<div class="main">
 	<el-container>
-		<el-header>
-			<header-element />
-		</el-header>
-		<el-main>
-			<router-view />
-		</el-main>
-		<el-footer>
-			<footer-element />
-		</el-footer>
+		<el-aside width="200px">
+			<aside-element />
+		</el-aside>
+		<el-container>
+			<el-header>
+				<header-element />
+			</el-header>
+			<el-main>
+				<router-view />
+			</el-main>
+			<el-footer>
+				<footer-element />
+			</el-footer>
+		</el-container>
 	</el-container>
-</el-container>
+	<div id="popup_instance"></div>
+</div>
 </template>
 
 <script>
 export default {
-	name: 'App'
+	name: 'App',
+
+	created() {
+		this.$popup()
+		this.$popup()
+		this.$popup()
+		this.$popup()
+	}
 }
 </script>
 
 <style>
 #app {
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	margin-top: 60px;
+
 }
 
 .el-header,
