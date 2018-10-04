@@ -3,6 +3,7 @@
 	<img class="logo" src="../assets/logo.png" v-on:click="goHome()">
 	<el-button v-for="item in menuItems" :key="item.id" class="full-width" v-on:click="clicked(item)">{{ item.title }}</el-button>
 	<el-button class="full-width" v-on:click="goEdit()">Editor</el-button>
+	<el-button class="full-width" v-on:click="showPopup()">Popup</el-button>
 </div>
 </template>
 <script>
@@ -36,9 +37,18 @@ export default {
 			.then((response) => {
 				this.menuItems = response.data
 			})
+		},
+
+		showPopup() {
+			this.$popup({
+				data: {
+					title: 'bla'
+				}
+			})
 		}
 	},
 	created () {
+		window.WABBA= this
 		this.load()
 	}
 }

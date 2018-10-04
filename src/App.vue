@@ -22,14 +22,7 @@
 
 <script>
 export default {
-	name: 'App',
-
-	created() {
-		this.$popup()
-		this.$popup()
-		this.$popup()
-		this.$popup()
-	}
+	name: 'App'
 }
 </script>
 
