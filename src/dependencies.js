@@ -9,7 +9,7 @@ import HeaderElement from '@/components/generic/HeaderElement'
 import FooterElement from '@/components/generic/FooterElement'
 import Text from '@/components/fields/Text'
 import ajax from './plugin/Request.js'
-import popup from './plugin/Popup.js'
+import popup from './plugin/popup/Popup.js'
 
 Vue.use(ElementUI)
 Vue.use(popup)

@@ -1,4 +1,4 @@
-import XPopup from '@/components/generic/XPopup'
+import XPopup from './XPopup.vue'
 
 const POPUP_ELEMENT = document.createElement('div')
 document.body.appendChild(POPUP_ELEMENT)
