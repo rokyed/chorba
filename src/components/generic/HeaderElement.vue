@@ -30,5 +30,6 @@ export default {
 	.main {
 		font-size: 50px;
 		font-weight: bold;
+		text-align: center;
 	}
 </style>

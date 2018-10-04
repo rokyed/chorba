@@ -20,6 +20,7 @@ export default {
 		display: block;
 		font-size: 20px;
 		font-weight: bold;
+		text-align: center;
 	}
 	.glitch {
 		line-height: 30px;

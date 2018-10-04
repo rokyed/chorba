@@ -27,5 +27,8 @@ module.exports = {
 			: 'off',
 		"indent": ["error", "tab"],
 		"no-tabs": "off"
+	},
+	"globals": {
+		"Chorba": true
 	}
 }

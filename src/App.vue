@@ -26,9 +26,9 @@ export default {
 }
 </script>
 
-<style>
-#app {
-
+<style scoped>
+.main {
+	min-height: 100%;
 }
 
 .el-header,

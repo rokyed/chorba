@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { Notification } from 'element-ui'
 
 export default {
 	install (Vue, options) {
@@ -9,10 +8,18 @@ export default {
 
 				return response
 			} catch (error) {
-				Notification({
-					title: 'bro',
-					message: 'sowwy but it failed :(',
-					duration: 1000
+				this.$popup({
+					data: {
+						title: 'bro',
+						contentName: 'message',
+						contentBinds: {
+							message: 'bro!!',
+							click: (value) => {
+								console.log('hello')
+								console.log(value)
+							}
+						}
+					}
 				})
 				throw error
 			}

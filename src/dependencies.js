@@ -7,6 +7,7 @@ import './assets/global.css'
 import AsideElement from '@/components/AsideElement'
 import HeaderElement from '@/components/generic/HeaderElement'
 import FooterElement from '@/components/generic/FooterElement'
+import Message from '@/components/generic/Message'
 import Text from '@/components/fields/Text'
 import ajax from './plugin/Request.js'
 import popup from './plugin/popup/Popup.js'
@@ -19,3 +20,4 @@ Vue.component('aside-element', AsideElement)
 Vue.component('header-element', HeaderElement)
 Vue.component('footer-element', FooterElement)
 Vue.component('text-field', Text)
+Vue.component('message', Message)

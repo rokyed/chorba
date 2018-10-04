@@ -9,7 +9,7 @@ Vue.config.performance = true
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+window.Chorba = new Vue({
 	el: '#app',
 	components: {
 		App

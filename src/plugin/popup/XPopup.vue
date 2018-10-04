@@ -1,14 +1,12 @@
 <template>
 	<transition name="fade">
-		<div class="main" v-if="show">
+		<div class="popup" v-if="show">
 			<div class="top-bar">
 				<span class="title">{{title}}</span>
 				<button class="close" @click="close">X Close</button>
 			</div>
 			<div class="container">
-				<template v-for="(child, index) in children">
-					<component :is="child" :key="child.name"></component>
-				</template>
+				<component v-if="contentName" :is="contentName" v-bind="contentBinds"></component>
 			</div>
 		</div>
 	</transition>
@@ -30,7 +28,8 @@ export default {
 		return {
 			show: false,
 			title: 'No Title',
-			children: []
+			contentName: null,
+			contentBinds: null
 		}
 	},
 	mounted() {
@@ -52,7 +51,7 @@ export default {
 	.fade-enter, .fade-leave-to {
 		opacity: 0;
 	}
-	.main {
+	.popup {
 		position: fixed;
 		left: 0;
 		right: 0;
@@ -76,6 +75,17 @@ export default {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: stretch;
+	}
+
+	.container {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 60px;
+		bottom: 0;
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
 	}
 	.close {
 		position: fixed;
