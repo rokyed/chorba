@@ -86,6 +86,7 @@ export default {
 		overflow: auto;
 		display: flex;
 		flex-direction: column;
+		background: transparent;
 	}
 	.close {
 		position: fixed;

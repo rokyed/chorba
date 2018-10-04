@@ -21,5 +21,6 @@ export default {
 		display: block;
 		font-size: 20px;
 		font-weight: bold;
+		background: transparent;
 	}
 </style>
