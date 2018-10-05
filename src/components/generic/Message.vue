@@ -22,5 +22,6 @@ export default {
 		font-size: 20px;
 		font-weight: bold;
 		background: transparent;
+		padding: 10px;
 	}
 </style>

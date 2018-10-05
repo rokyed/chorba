@@ -1,9 +1,8 @@
 <template>
 <div class="main">
 	<img class="logo" src="../assets/logo.png" v-on:click="goHome()">
-	<el-button v-for="item in menuItems" :key="item.id" class="full-width" v-on:click="clicked(item)">{{ item.title }}</el-button>
-	<el-button class="full-width" v-on:click="goEdit()">Editor</el-button>
-	<el-button class="full-width" v-on:click="showPopup()">Popup</el-button>
+	<button class="button full-width" v-on:click="goList()">Articles</button>
+	<button class="button full-width" v-on:click="goEdit()">Editor</button>
 </div>
 </template>
 <script>
@@ -27,6 +26,10 @@ export default {
 		goEdit() {
 			this.$router.push('/editing')
 		},
+		
+		goList() {
+			this.$router.push('/list')
+		},
 
 		clicked(item) {
 			this.$router.push('/art/' + item.id)
@@ -36,14 +39,6 @@ export default {
 			this.$ajax('/api/list')
 			.then((response) => {
 				this.menuItems = response.data
-			})
-		},
-
-		showPopup() {
-			this.$popup({
-				data: {
-					title: 'bla'
-				}
 			})
 		}
 	},
@@ -67,7 +62,18 @@ export default {
 	width: 160px;
 	margin: 20px;
 }
-.el-button+.el-button {
-	margin-left: 20px;
+.button {
+	border: 4px solid #fff;
+	box-shadow: 4px 4px 0px 0px #888;
+	font-size: 20px;
+	transition: color .25s;
+	cursor: pointer;
+}
+.button:hover {
+	color: #f00;
+}
+
+.button + .button {
+	margin-top: 0;
 }
 </style>

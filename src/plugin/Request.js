@@ -10,14 +10,10 @@ export default {
 			} catch (error) {
 				this.$popup({
 					data: {
-						title: 'bro',
+						title: 'we\'re back in the 80\'s',
 						contentName: 'message',
 						contentBinds: {
-							message: 'bro!!',
-							click: (value) => {
-								console.log('hello')
-								console.log(value)
-							}
+							message: 'there was an error with your potato'
 						}
 					}
 				})
